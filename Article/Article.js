@@ -112,34 +112,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
-const articles = document.querySelector('.articles')
-const header = document.querySelector('header')
-header.classList.add('header')
+const articles = document.querySelector('.articles');
 
-// cardData.forEach(data => {
-//   cardContainer.appendChild(createCard(data.title, data.subtitle, data.content, data.imgsrc))
-// });
+function articleCreator(t,d,p1,p2,p3){
 
-// new elements+classnames
 const articleDiv = document.createElement('div');
-articleDiv.classList.add('article')
 const articleTitle = document.createElement('h2');
 const articleDate = document.createElement('p');
-articleDate.classList.add('date')
 const articleParagraph1 = document.createElement('p');
 const articleParagraph2 = document.createElement('p');
 const articleParagraph3 = document.createElement('p');
 const expandButton = document.createElement('span');
+
+console.log('Im here',expandButton)
+
+
+
+articleDiv.classList.add('article');
+articleDate.classList.add('date');
 expandButton.classList.add('expandButton');
-//listener
-expandButton.addEventListener('click',e =>{
+
+articleDiv.textContent =  t;
+articleDate.textContent = d;
+articleParagraph1.textContent = p1;
+articleParagraph2.textContent = p2;
+articleParagraph3.textContent = p3;
+expandButton.textContent='expand';
+
+expandButton.addEventListener('click',(e) =>{
 articleDiv.classList.toggle('article-open')
 });
-
-//structure of elements
 articleDiv.appendChild(articleTitle);
 articleDiv.appendChild(articleDate);
 articleDiv.appendChild(articleParagraph1);
 articleDiv.appendChild(articleParagraph2);
 articleDiv.appendChild(articleParagraph3);
 articleDiv.appendChild(expandButton);
+
+return articleDiv
+};
+
+data.forEach(article => {
+articles.appendChild(articleCreator(article.title,article.date,article.firstParagraph,article.secondParagraph,article.thirdParagraph))
+});
+          
