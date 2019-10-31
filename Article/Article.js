@@ -131,7 +131,7 @@ articleDiv.classList.add('article');
 articleDate.classList.add('date');
 expandButton.classList.add('expandButton');
 
-articleDiv.textContent =  t;
+articleTitle.textContent =  t;
 articleDate.textContent = d;
 articleParagraph1.textContent = p1;
 articleParagraph2.textContent = p2;
