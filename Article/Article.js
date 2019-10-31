@@ -124,7 +124,6 @@ const articleParagraph2 = document.createElement('p');
 const articleParagraph3 = document.createElement('p');
 const expandButton = document.createElement('span');
 
-console.log('Im here',expandButton)
 
 
 
@@ -142,6 +141,7 @@ expandButton.textContent='expand';
 expandButton.addEventListener('click',(e) =>{
 articleDiv.classList.toggle('article-open')
 });
+
 articleDiv.appendChild(articleTitle);
 articleDiv.appendChild(articleDate);
 articleDiv.appendChild(articleParagraph1);
